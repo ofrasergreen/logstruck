@@ -1,0 +1,9 @@
+.classpath
+.project
+.idea*
+target
+atlassian-ide-plugin.xml
+.settings
+.cache
+.DS_Store
+*.sc
