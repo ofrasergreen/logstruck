@@ -44,6 +44,7 @@ lazy val supportLogstash = support("logstash")
 lazy val supportFluentd = support("fluentd")
 
 lazy val supportSlf4j = support("slf4j")
+  .settings(libraryDependencies += "org.slf4j" % "slf4j-api" % "1.7.22")
 
 lazy val all =
   Seq(logger, example, supportFile, supportJson, supportSlf4j, supportLogstash, supportFluentd)
