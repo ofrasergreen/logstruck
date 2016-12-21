@@ -1,7 +1,7 @@
 lazy val logstruckSettings = Seq(
   organization := "com.logstruck",
   scalaVersion := "2.11.7",
-  version := "0.2",
+  version := "0.3",
 
   libraryDependencies ++= Seq(
     "org.scalatest" %% "scalatest" % "2.2.5" % "test",
