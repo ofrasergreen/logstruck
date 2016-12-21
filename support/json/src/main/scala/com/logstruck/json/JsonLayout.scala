@@ -20,8 +20,7 @@ class JsonLayout {
 
   def context(c: Context) = JObject(mutable.Map("file" -> JString(c.source.file),
     "source" -> JString(c.source.source),
-  "line" -> JNum(c.source.lineNumber),
-  "data" -> data(c.data)))
+  "line" -> JNum(c.source.lineNumber)))
 
 
   def value(a: Any): JValue = a match {
@@ -46,7 +45,7 @@ class JsonLayout {
     FastRenderer.render(JObject(mutable.Map("message" -> message(ev.message),
       "level" -> level(ev.level),
       "ctx" -> context(ev.context),
-      "data" -> data(ev.data),
+      "data" -> data(ev.data ++ ev.context.data),
       "timestamp" -> timestamp(ev.timestamp, ev.elapsedTime)
     )))
   }
