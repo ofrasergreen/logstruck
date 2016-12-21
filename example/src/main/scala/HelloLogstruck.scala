@@ -2,15 +2,15 @@ import com.logstruck.LogLevel.{Info, Warn}
 import com.logstruck.file.StdOut
 import com.logstruck.json.JsonLayout
 import com.logstruck._
-import com.logstruck.fluentd.UdpOut
 
 import scala.collection.immutable.HashMap
 
 object HelloLogstruck {
   import Filter._
 
+  val buffer = new Buffer(2)
   val log = new Logger(filter = Filter((LogLevel < Info) -> Drop),
-    outputs = List(new StdOut()))
+    outputs = List(new StdOut(), buffer))
 
   def main(args: Array[String]): Unit = {
     log.info("Hello, world!")

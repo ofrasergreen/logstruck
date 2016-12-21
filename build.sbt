@@ -3,7 +3,6 @@ lazy val logstruckSettings = Seq(
   scalaVersion := "2.11.7",
   version := "0.2",
 
-  resolvers += Resolver.sonatypeRepo("releases"),
   libraryDependencies ++= Seq(
     "org.scalatest" %% "scalatest" % "2.2.5" % "test",
     "org.scalacheck" %% "scalacheck" % "1.12.4" % "test",
@@ -44,6 +43,8 @@ lazy val supportLogstash = support("logstash")
 
 lazy val supportFluentd = support("fluentd")
 
+lazy val supportSlf4j = support("slf4j")
+
 lazy val all =
-  Seq(logger, example, supportFile, supportJson, supportLogstash, supportFluentd)
+  Seq(logger, example, supportFile, supportJson, supportSlf4j, supportLogstash, supportFluentd)
 
