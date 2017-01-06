@@ -46,7 +46,7 @@ class JsonLayout {
       "level" -> level(ev.level),
       "ctx" -> context(ev.context),
       "data" -> data(ev.data ++ ev.context.data),
-      "timestamp" -> timestamp(ev.timestamp, ev.elapsedTime)
+      "@timestamp" -> timestamp(ev.timestamp, ev.elapsedTime)
     )))
   }
 }
