@@ -30,8 +30,11 @@ class JsonLayout {
     case d: Double => JNum(d)
     case f: Float => JNum(f)
     case b: Boolean => JBool(b)
+    case Some(s) => value(s)
+    case None => JNull
     case m: Map[_, _] => data(m.map { case (k, v) => k.toString -> v })
     case t: Traversable[_] => JArray(t.map(value(_)).toArray)
+    case c: Product if c.productArity == 1 => value(c.productIterator.next)
     case c: Product =>
       data(c.getClass.getDeclaredFields.map(_.getName).zip(c.productIterator.to).toMap)
     case o => JString(o.toString)
