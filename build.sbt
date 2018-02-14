@@ -1,7 +1,16 @@
 lazy val logstruckSettings = Seq(
   organization := "com.logstruck",
   scalaVersion := "2.11.7",
-  version := "0.5",
+  version := "0.6",
+
+  publishTo := {
+    val nexus = "https://oss.sonatype.org/"
+    if (isSnapshot.value)
+      Some("Sonatype Snapshots Nexus" at nexus + "content/repositories/snapshots")
+    else
+      Some("Sonatype Releases Nexus"  at nexus + "service/local/staging/deploy/maven2")
+  },
+  credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
 
   libraryDependencies ++= Seq(
     "org.scalatest" %% "scalatest" % "2.2.5" % "test",
@@ -10,7 +19,13 @@ lazy val logstruckSettings = Seq(
 ),
 
   licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
-  homepage := Some(url("http://logstruck.com"))
+  homepage := Some(url("http://logstruck.com")),
+  scmInfo := Some(ScmInfo(
+    url("https://github.com/ofrasergreen/logstruck"),
+    "scm:git@github.com:ofrasergreen/logstruck.git")),
+  developers := List(
+    Developer(id="ofrasergreen", name="Owen Fraser-Green", email="owen@fraser-green.com", url=url("https://www.fraser-green.com"))
+  )
 )
 
 lazy val root = project.in(file("."))
