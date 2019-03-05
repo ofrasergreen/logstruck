@@ -1,11 +1,12 @@
 package com.logstruck.json
 
 import java.text.SimpleDateFormat
-import java.util.{TimeZone, Calendar, Date}
+import java.util.{TimeZone, Date, Calendar}
 
 import com.logstruck._
 import com.logstruck.layout.Layout
-import jawn.ast._
+import org.typelevel.jawn.ast._
+
 import scala.collection.mutable
 
 class JsonLayout {

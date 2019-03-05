@@ -1,6 +1,6 @@
 lazy val logstruckSettings = Seq(
   organization := "com.logstruck",
-  scalaVersion := "2.11.7",
+  scalaVersion := "2.12.8",
   version := "0.6",
 
   publishTo := {
@@ -13,8 +13,8 @@ lazy val logstruckSettings = Seq(
   credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
 
   libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "2.2.5" % "test",
-    "org.scalacheck" %% "scalacheck" % "1.12.4" % "test",
+    "org.scalatest" %% "scalatest" % "3.0.6" % "test",
+    "org.scalacheck" %% "scalacheck" % "1.14.0" % "test",
     "org.scala-lang" % "scala-reflect" % scalaVersion.value
 ),
 

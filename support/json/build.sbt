@@ -1,5 +1,5 @@
 name := "json-support"
 
 libraryDependencies ++= Seq(
-  "org.spire-math" %% "jawn-ast" % "0.8.3"
+  "org.typelevel" %% "jawn-ast" % "0.14.0"
 )

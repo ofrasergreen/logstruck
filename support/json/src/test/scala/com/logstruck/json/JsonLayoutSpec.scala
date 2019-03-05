@@ -1,7 +1,7 @@
 package com.logstruck.json
 
 import org.scalatest.{FlatSpec, Matchers}
-import jawn.ast._
+import org.typelevel.jawn.ast._
 
 import scala.collection.mutable
 
